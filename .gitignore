@@ -3,9 +3,12 @@
 /*/
 
 # Inverse ignore some stuff
-!/Assets/
-!/ProjectSettings/
+!/ProjectTangoCurvedLight/Assets/
+!/ProjectTangoCurvedLight/ProjectSettings/
 !.gitignore
+!CONTRIBUTING
+!LICENSE
+!READNE.md
 
 # OS Stuff
 .DS_Store
