@@ -3,8 +3,8 @@
 /*/
 
 # Inverse ignore some stuff
-!/ProjectTangoCurvedLight/Assets/
-!/ProjectTangoCurvedLight/ProjectSettings/
+!ProjectTangoCurvedLight/Assets/
+!ProjectTangoCurvedLight/ProjectSettings/
 !.gitignore
 !CONTRIBUTING
 !LICENSE
