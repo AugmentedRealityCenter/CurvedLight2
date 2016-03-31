@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &195692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468864}
+  - 114: {fileID: 11466148}
+  m_Layer: 0
+  m_Name: UIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &468864
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195692}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11466148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195692}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27ad1128bc6f42f2b9e96e26ff20a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_markPrefabs:
+  - {fileID: 188320, guid: bb3ba25bb7f2d422dbf25c1079b02c8a, type: 2}
+  - {fileID: 188320, guid: cd33881bc3c6743a2ae490d4428bf4f2, type: 2}
+  - {fileID: 188320, guid: b93817ddafe384d2dacef38f55680bf0, type: 2}
+  m_pointCloud: {fileID: 0}
+  m_canvas: {fileID: 0}
+  m_prefabTouchEffect: {fileID: 22497430, guid: 5a77b678bf7604d5fb4f0b5399e89224,
+    type: 2}
+  m_savingText: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 195692}
+  m_IsPrefabParent: 1
