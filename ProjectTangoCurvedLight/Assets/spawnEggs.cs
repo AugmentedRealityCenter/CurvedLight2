@@ -19,7 +19,7 @@ public class spawnEggs : MonoBehaviour {
 	{
 		if (spawnPoints.Length > 1) {
 			while (pointIndex == lastPoint) {
-				pointIndex = Random.Range (0, (spawnPoints.Length - 1));
+				pointIndex = Random.Range (0, spawnPoints.Length);
 			}
 			lastPoint = pointIndex;
 			Instantiate (egg, spawnPoints [pointIndex].transform.position, Quaternion.identity);
