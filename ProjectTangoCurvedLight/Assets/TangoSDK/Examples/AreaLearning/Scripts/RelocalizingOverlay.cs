@@ -31,10 +31,14 @@ public class RelocalizingOverlay : MonoBehaviour, ITangoPose, ITangoLifecycle
     /// </summary>
     public GameObject m_relocalizationOverlay;
 
+	public GameObject manager;
+
     /// <summary>
     /// The TangoApplication being listened to.
     /// </summary>
     private TangoApplication m_tangoApplication;
+
+	private bool recordingStart = false;
 
     /// <summary>
     /// Unity start override function.
@@ -63,6 +67,11 @@ public class RelocalizingOverlay : MonoBehaviour, ITangoPose, ITangoLifecycle
             if (pose.status_code == TangoEnums.TangoPoseStatusType.TANGO_POSE_VALID)
             {
                 m_relocalizationOverlay.SetActive(false);
+				if(!recordingStart)
+				{
+					manager.SendMessage("startRecordingPoseInfo");
+					recordingStart = true;
+				}
             }
             else
             {

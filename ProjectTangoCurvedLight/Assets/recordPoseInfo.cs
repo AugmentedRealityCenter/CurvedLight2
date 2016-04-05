@@ -10,24 +10,12 @@ public class recordPoseInfo : MonoBehaviour {
 	private string fileName;
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("recordPose", 0, 0.1F);
-		System.IO.File.AppendAllText(Application.persistentDataPath+"/PoseInfo.txt", "New run\n\n");
-		//InvokeRepeating("show", 0, 05F);
+		fileName = "PoseInfo_";
+		fileName += System.DateTime.Now.ToString ("yyyy_MM_ddThh_mm_ss");
 	}
 
-	//void Update(){
-		//if (textField.text.Length > 0) {
-			//fileName = textField.text;
-		//}
-	//}
-
-	void show()
+	void startRecordingPoseInfo()
 	{
-		AndroidHelper.ShowAndroidToastMessage(fileName);
-	}
-
-	void startRecording(){
-		fileName = textField.text;
 		InvokeRepeating("recordPose", 0, 0.1F);
 	}
 
@@ -48,6 +36,6 @@ public class recordPoseInfo : MonoBehaviour {
 		info += tab;
 		info += Time.time;
 		info += "\n";
-		System.IO.File.AppendAllText(Application.persistentDataPath+"/PoseInfo.txt", info);
+		System.IO.File.AppendAllText(Application.persistentDataPath+"/"+fileName+".txt", info);
 	}
 }
