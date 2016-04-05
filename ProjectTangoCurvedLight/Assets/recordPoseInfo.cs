@@ -21,7 +21,7 @@ public class recordPoseInfo : MonoBehaviour {
 
 	void recordPose() {
 		string info = "";
-		string tab = "\t";
+		string tab = ",";
 		info += CBHead.transform.position.x;
 		info += tab;
 		info += CBHead.transform.position.y;
