@@ -33,6 +33,9 @@ using UnityEngine.UI;
 /// </summary>
 public class AreaDescriptionPicker : MonoBehaviour, ITangoLifecycle
 {
+	// Used to set warp to true or false in the shader
+	//public Material setWarp;
+
 	/// <summary>
 	/// The prefab of a standard button in the scrolling list.
 	/// </summary>
@@ -100,6 +103,14 @@ public class AreaDescriptionPicker : MonoBehaviour, ITangoLifecycle
 	/// Description.</param>
 	public void StartGame(bool isNewAreaDescription)
 	{
+		/*float value;
+		if (m_enableLearningToggle.isOn)
+			value = 1;
+		else
+			value = 0;
+		AndroidHelper.ShowAndroidToastMessage("warp value: " + value);*/
+		//setWarp.SetFloat("_warp", 0.0F);
+
 		// The game has to be started with an Area Description.
 		if (!isNewAreaDescription)
 		{
