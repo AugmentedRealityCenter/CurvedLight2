@@ -6,17 +6,19 @@ public class recordPoseInfo : MonoBehaviour {
 
 	public GameObject CBHead;
 	public Text textField;
+	private spawnEggs script;
 
 	private string fileName;
 	// Use this for initialization
 	void Start () {
+		script = GetComponent<spawnEggs>();
 		fileName = "PoseInfo_";
 		fileName += System.DateTime.Now.ToString ("yyyy_MM_ddThh_mm_ss");
 	}
 
 	void startRecordingPoseInfo()
 	{
-		InvokeRepeating("recordPose", 0, 0.1F);
+		InvokeRepeating("recordPose", 0, 0.05F);
 	}
 
 	void recordPose() {
@@ -35,7 +37,9 @@ public class recordPoseInfo : MonoBehaviour {
 		info += CBHead.transform.eulerAngles.z;
 		info += tab;
 		info += Time.time;
+		info += tab;
+		info += script.getEggsCollected();
 		info += "\n";
-		System.IO.File.AppendAllText(Application.persistentDataPath+"/"+fileName+".txt", info);
+		System.IO.File.AppendAllText(Application.persistentDataPath+"/"+fileName+".csv", info);
 	}
 }
