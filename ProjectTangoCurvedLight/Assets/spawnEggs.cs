@@ -43,6 +43,11 @@ public class spawnEggs : MonoBehaviour {
 		}
 	}
 
+	public int getEggsCollected()
+	{
+		return eggsCollected;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		
