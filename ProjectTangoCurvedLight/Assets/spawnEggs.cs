@@ -34,12 +34,21 @@ public class spawnEggs : MonoBehaviour {
 	{
 		++eggsCollected;
 		score.text = "collected: "+eggsCollected + "\n"+minutes+":"+seconds;
-		if (spawnPoints.Length > 1) {
-			while (pointIndex == lastPoint) {
-				pointIndex = Random.Range (0, spawnPoints.Length);
+		GameObject[] allEggs = GameObject.FindGameObjectsWithTag("egg");
+		foreach( GameObject eg in allEggs )
+		{
+			Destroy(eg);
+		}
+
+		for (int x = 0; x <=1; x++) {
+			if (spawnPoints.Length > 2) {
+				while (pointIndex == lastPoint) {
+					pointIndex = Random.Range (0, spawnPoints.Length);
+				}
+				lastPoint = pointIndex;
+				GameObject e = (GameObject)Instantiate (egg, spawnPoints [pointIndex].transform.position, Quaternion.identity);
+				e.GetComponent<MeshFilter>().mesh.bounds = new Bounds(new Vector3(0,0,0), new Vector3(2000,2000,2000));
 			}
-			lastPoint = pointIndex;
-			Instantiate (egg, spawnPoints [pointIndex].transform.position, Quaternion.identity);
 		}
 	}
 
@@ -47,6 +56,7 @@ public class spawnEggs : MonoBehaviour {
 	{
 		return eggsCollected;
 	}
+	
 
 	// Update is called once per frame
 	void Update () {

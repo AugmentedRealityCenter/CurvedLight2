@@ -46,9 +46,9 @@
 				const float4 camera_direction = float4(0.0,0.0,-w_mag,1.0);
 				
 				 float warp_amount = min(w_mag/20.0, 1.0);
-				 /*if(w.z > 0.0){
+				 if(w.z > 0.0){
 				  warp_amount = 0.0;
-				  }*/
+				  }
 				//warp_amount = 0.0; //COMMENT/UNCOMMENT TO CHANGE WHETHER WARPING OR NOTs
 				const float4 w_warped = lerp(w,camera_direction,warp_amount); 
 				//const float4 w_warped = w_mag * normalize(lerp(w,camera_direction,warp_amount)); // (1- warp_amount) * w + warp_amount * camera_direction				
