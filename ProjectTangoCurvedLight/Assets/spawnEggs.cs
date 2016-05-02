@@ -40,7 +40,7 @@ public class spawnEggs : MonoBehaviour {
 			Destroy(eg);
 		}
 
-		for (int x = 0; x <=1; x++) {
+		for (int x = 0; x <=2; x++) {
 			if (spawnPoints.Length > 2) {
 				while (pointIndex == lastPoint) {
 					pointIndex = Random.Range (0, spawnPoints.Length);
