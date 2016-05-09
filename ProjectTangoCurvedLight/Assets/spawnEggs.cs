@@ -35,21 +35,29 @@ public class spawnEggs : MonoBehaviour {
 		++eggsCollected;
 		score.text = "collected: "+eggsCollected + "\n"+minutes+":"+seconds;
 		GameObject[] allEggs = GameObject.FindGameObjectsWithTag("egg");
+		int[] CurrentSpawns = new int[]{-1,-1,-1};
+		int[] PrevSpawns = new int[]{-1,-1,-1};
 		foreach( GameObject eg in allEggs )
 		{
 			Destroy(eg);
 		}
 
-		for (int x = 0; x <=2; x++) {
+		for (int x = 0; x <=1; x++) {
 			if (spawnPoints.Length > 2) {
-				while (pointIndex == lastPoint) {
+				while (pointIndex == CurrentSpawns[0] || pointIndex == CurrentSpawns[1] || pointIndex == CurrentSpawns[2]
+				       || pointIndex == PrevSpawns[0] || pointIndex == PrevSpawns[1] || pointIndex == PrevSpawns[2]) {
 					pointIndex = Random.Range (0, spawnPoints.Length);
 				}
 				lastPoint = pointIndex;
+				CurrentSpawns[x] = pointIndex;
 				GameObject e = (GameObject)Instantiate (egg, spawnPoints [pointIndex].transform.position, Quaternion.identity);
 				e.GetComponent<MeshFilter>().mesh.bounds = new Bounds(new Vector3(0,0,0), new Vector3(2000,2000,2000));
 			}
 		}
+		PrevSpawns = CurrentSpawns;
+		CurrentSpawns[0] = -1;
+		CurrentSpawns[1] = -1;
+		CurrentSpawns [2] = -1;
 	}
 
 	public int getEggsCollected()
