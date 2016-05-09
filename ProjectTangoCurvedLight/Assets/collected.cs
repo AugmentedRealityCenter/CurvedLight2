@@ -16,8 +16,10 @@ public class collected : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Destroy(gameObject);
-		spawner.SendMessage ("spawnEgg");
+		//if (other.tag == "Player") {
+			Destroy (gameObject);
+			spawner.SendMessage ("spawnEgg");
+		//}
 	}
 
 }
